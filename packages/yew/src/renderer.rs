@@ -21,6 +21,7 @@ pub fn set_custom_panic_hook(hook: Box<dyn Fn(&PanicInfo<'_>) + Sync + Send + 's
 }
 
 fn set_default_panic_hook() {
+    // Cell 的 replace 方法 改变 Cell 内部的值并返回原值
     if !PANIC_HOOK_IS_SET.with(|hook_is_set| hook_is_set.replace(true)) {
         std::panic::set_hook(Box::new(console_error_panic_hook::hook));
     }

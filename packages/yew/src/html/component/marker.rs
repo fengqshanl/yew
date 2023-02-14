@@ -12,11 +12,11 @@ use crate::{function_component, html};
 ///
 /// # Warning
 ///
-/// The Real DOM hierarchy must also match the server-side rendered artifact. This component is
+/// The Real DOM hierarchy(级别/等级) must also match the server-side rendered artifact(制品/结果？). This component is
 /// only usable when the original component does not introduce any additional elements. (e.g.:
 /// Context Providers)
 ///
-/// A generic parameter is provided to help identify the component to be substituted.
+/// A generic parameter is provided to help identify(识别) the component to be substituted(取代).
 /// The type of the generic parameter is not required to be the same component that was in the other
 /// implementation. However, this behaviour may change in the future if more debug assertions were
 /// to be introduced. It is recommended that the generic parameter represents the component in the
@@ -79,7 +79,7 @@ use crate::{function_component, html};
 /// }
 /// ```
 ///
-/// To mitigate this, we can use a `PhantomComponent`:
+/// To mitigate(减轻) this, we can use a `PhantomComponent`:
 ///
 /// ```
 /// use yew::prelude::*;
